@@ -1,9 +1,23 @@
 <!-- Having recepis list and  details next to each other -->
 <div class="row">
   <div class="col-md-5">
-    <app-recipes-list></app-recipes-list>
+    <!-- Setting selectedRecipe with event, we also do it as a method too! -->
+    <app-recipes-list
+      (recipeWasSelected)="selectedRecipe = $event"
+    ></app-recipes-list>
   </div>
   <div class="col-md-7">
-    <app-recipes-detail></app-recipes-detail>
+    <!-- Passing the information of selectedRecipe to the detail component: -->
+    <!-- Only show it if selectedRecipe is set thus we use *ngIf -->
+    <app-recipes-detail
+      *ngIf="selectedRecipe; else infoText"
+      [recipe]="selectedRecipe"
+    ></app-recipes-detail>
+    <!-- if not set, show a dummy text: use ng-tempelate
+    ng-tempelate recives a local reference:
+    -->
+    <ng-template #infoText>
+      <p>please choose a recipe!</p>
+    </ng-template>
   </div>
 </div>
