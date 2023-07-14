@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Recipe } from '../../recipe.model';
 
 @Component({
@@ -9,15 +9,15 @@ import { Recipe } from '../../recipe.model';
 export class RecipeItemComponent implements OnInit {
   // get the recipe from the outside initially:
   @Input() recipe: Recipe;
-  // emit the selected event: and it will not pass any information so = void
-  @Output() recipeSelected = new EventEmitter<void>();
+  // emit the selected event: and it will not pass any information so = void   ==> use service instead!!!
+  // @Output() recipeSelected = new EventEmitter<void>();
   constructor() {}
 
   ngOnInit(): void {}
 
   // writing this method for selected the recipe:
   onSelected() {
-    this.recipeSelected.emit();
+    // this.recipeSelected.emit();
   }
 }
 
