@@ -18,4 +18,12 @@ export class ShoppingListService {
     // When ever it changes. a copy of it=> slice
     this.ingredientsChanged.emit(this.ingredients.slice());
   }
+  // Connect recipe to shopping we create new method, spread ingredients to a list of ingredients.
+  addIngredients(ingredients: Ingredient[]) {
+    this.ingredients.push(...ingredients)
+    // emit that the ingredients changed so we send a COPY of it there.
+    this.ingredientsChanged.emit(this.ingredients.slice())
+  }
 }
+
+// ... turn an array of elements to the list of elements

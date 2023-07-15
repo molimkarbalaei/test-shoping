@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Recipe } from '../recipe.model';
+import { Recipeservice } from '../recipe.service';
 
 @Component({
   selector: 'app-recipes-detail',
@@ -9,9 +10,12 @@ import { Recipe } from '../recipe.model';
 export class RecipesDetailComponent implements OnInit {
 // Passing the selectedRecipe to the app recipe detail: add a property: thus we use @Input then we go to the recipe component and bind it.
 @Input() recipe: Recipe
-  constructor() { }
+  constructor(private recipeService: Recipeservice) { }
 
   ngOnInit(): void {
   }
-
+  onAddToShoppingList(){
+    // pass on ingredients to the recipe service
+  this.recipeService.addIngredientsToShoppingList(this.recipe.ingredients)
+  }
 }
