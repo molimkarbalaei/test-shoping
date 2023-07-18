@@ -1,4 +1,6 @@
-<a style="cursor: pointer" class="list-group-item clearfix">
+<a style="cursor: pointer" 
+[routerLink]="[index]"
+class="list-group-item clearfix">
   <div class="pull-left">
     <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
     <p class="list-group-item-text">{{ recipe.description }}</p>
@@ -14,3 +16,4 @@
 </a>
 
 <!-- emit and event that when we clicked on recipe it informs the parent component that it selected -->
+<!-- we have dynamic segment in the path then: [routerLink] to pass the array to config the segment-->
