@@ -13,8 +13,9 @@
     <!-- Work on actuall links -->
     <div class="navbar-collapse">
       <ul class="nav navbar-nav">
-        <li><a href="#" (click)="onSelect('recipe')">Recipe</a></li>
-        <li><a href="#" (click)="onSelect('shopping-list')">Shopping List</a></li>
+    <!-- adding dynamic active link class  by using directive:-->
+        <li><a routerLinkActive="active" routerLink="/recipes">Recipe</a></li>
+        <li><a routerLinkActive="active" routerLink="/shopping-list">Shopping List</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown" appDropdown>
