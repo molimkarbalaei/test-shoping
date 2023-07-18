@@ -5,8 +5,8 @@ import { ShoppingListComponent } from "./shopping-list/shopping-list.component";
 
 // Registering the routes:
 const appRoutes : Routes = [
-    {path: '', redirectTo: '/recipes'}
-    {path: 'recepis'  ,component: RecipesComponent},
+    {path: '', redirectTo: '/recipes', pathMatch: 'full'},
+    {path: 'recipes'  ,component: RecipesComponent},
     {path: 'shopping-list'  ,component: ShoppingListComponent},
 ]
 
